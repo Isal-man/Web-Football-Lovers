@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;300;500;700&display=swap');
+
+* {
+    font-family: 'Kanit', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: rgb(3, 79, 251);
+    background: linear-gradient(322deg, rgba(3, 79, 251, 1) 19%, rgba(0, 255, 255, 1) 82%);
+}
+
+/* ====== SIGN UP ====== */
+
+.container {
+    max-width: 700px;
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 10px;
+}
+
+.container .title {
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+
+.container .title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: rgb(3, 79, 251);
+    background: linear-gradient(302deg, rgba(3, 79, 251, 1) 19%, rgba(0, 255, 255, 1) 82%);
+}
+
+.container form .user-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box {
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+
+.user-details .input-box .details {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.user-details .input-box input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all .3s ease;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+    border-color: rgba(0, 255, 255, 1);
+}
+
+form .gender-details .gender-title {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+form .gender-details .category {
+    display: flex;
+    width: 80%;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+
+.gender-details .category label {
+    display: flex;
+    align-items: center;
+}
+
+.gender-details .category .dot {
+    height: 18px;
+    width: 18px;
+    background-color: #d9d9d9;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 5px solid transparent;
+    transition: all .3s ease;
+}
+
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two,
+#dot-3:checked ~ .category label .three {
+    border-color: #d9d9d9;
+    background-color: rgba(0, 255, 255, 1);
+}
+
+form input[type="radio"] {
+    display: none;
+}
+
+form .button {
+    height: 45px;
+    margin: 45px 0;
+}
+
+form .button input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    background: rgb(3, 79, 251);
+    background: linear-gradient(302deg, rgba(3, 79, 251, 1) 19%, rgba(0, 255, 255, 1) 82%);
+}
+
+form .button input:hover {
+    background: rgb(3, 79, 251);
+    background: linear-gradient(-302deg, rgba(3, 79, 251, 1) 19%, rgba(0, 255, 255, 1) 82%);
+}
+
+input[type="tel"]:invalid + span::after {
+    content: '❎';
+}
+
+input[type="tel"]:valid + span::after {
+    content: '✅';
+}
+
+@media screen and (max-width: 375px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .user-details .input-box .details {
+        font-size: 13px;
+    }
+
+    .user-details .input-box input {
+        font-size: 13px;
+        height: 35px;
+    }
+
+    form .user-details .input-box {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    form .gender-details .category {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    form .gender-details .category .dot {
+        margin-right: 6px;
+    }
+
+    .container form .user-details {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+
+    .user-details::-webkit-scrollbar{
+        width: 0;
+    }
+}
+
+@media screen and (max-width: 584px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .user-details .input-box .details {
+        font-size: 13px;
+    }
+
+    .user-details .input-box input {
+        font-size: 13px;
+        height: 35px;
+    }
+
+    form .user-details .input-box {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    form .gender-details .category {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    form .gender-details .category .dot {
+        margin-right: 2px;
+    }
+
+    .container form .user-details {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+
+    .user-details::-webkit-scrollbar{
+        width: 0;
+    }
+}
+
+
+/* ====== LOGIN ====== */
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+}
+
+.center h1 {
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver;
+}
+
+.center form {
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+form .txt-field {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.txt-field input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.txt-field label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.txt-field span::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    height: 2px;
+    background: #2691d9;
+}
+
+.txt-field input:focus ~ label,
+.txt-field input:valid ~ label {
+    top: -5px;
+    color: #2691d9;
+}
+
+.txt-field input:focus ~ span,
+.txt-field input:valid ~ span {
+    width: 100%;
+}
+
+.pass {
+    margin: -5px 0 20px 5px;
+    color: #a6a6a6;
+    cursor: pointer;
+}
+
+.pass:hover {
+    text-decoration: underline;
+}
+
+input[type="submit"] {
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background: rgb(3, 79, 251);
+    background: linear-gradient(302deg, rgba(3, 79, 251, 1) 19%, rgba(0, 255, 255, 1) 82%);
+    border-radius: 25px;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+} 
+
+.signup-link {
+    margin: 30px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #666666;
+}
+
+.signup-link a{
+    color: #2691d9;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) {
+    .center {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .center {
+        width: 40%;
+    }
+}
+
+
+@media screen and (min-width: 1440px) {
+    .center {
+        width: 30%;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .center {
+        width: 20%;
+    }
+}

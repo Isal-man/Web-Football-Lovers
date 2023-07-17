@@ -1,0 +1,700 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;300;500;700&display=swap');
+
+* {
+    font-family: 'Kanit', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #ecf0f3;
+    --text-color: #31344b;
+}
+
+body {
+    background: var(--background);
+}
+
+body.dark {
+    --background: #12131b;
+    --text-color: #ecf0f3;
+}
+
+/* ====== SIDEBAR ====== */
+
+.side-bar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 250px;
+    height: 100vh;
+    background: var(--background);
+    padding: 12px;
+    box-shadow: -3px -3px 7px #ffffff,
+        3px 3px 5px #ceced1,
+        inset -3px -3px 7px #ffffff,
+        inset 3px 3px 5px #ceced1;
+    transition: all .5s ease;
+    z-index: 100;
+}
+
+.side-bar .title .logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.side-bar .title .logo .header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.side-bar .title .logo .header-text .ht2 {
+    font-size: 12px;
+    margin-top: -6px;
+    font-weight: lighter;
+}
+
+.side-bar .title .logo .image {
+    margin-top: 5px;
+}
+
+.side-bar .title .logo .image img {
+    width: 30px;
+}
+
+.side-bar ul {
+    margin-top: 35px;
+    list-style: none;
+}
+
+.side-bar ul button,
+.side-bar ul .mode {
+    color: var(--text-color);
+    background: var(--background);
+    border: none;
+    outline: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin-top: 12px;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 10px 25px;
+    border-radius: 6px;
+    box-shadow: -3px -3px 7px #ffffff,
+        3px 3px 5px #ceced1;
+    position: relative;
+}
+
+.side-bar ul .mode {
+    height: 45px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.side-bar ul .mode .mode-text {
+    width: 100%;
+    margin: 0px 35px 0px 40px;
+    line-height: 1.0;
+}
+
+.side-bar ul .mode .toggle-switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-width: 60px;
+}
+
+.toggle-switch .switch {
+    position: relative;
+    height: 22px;
+    width: 40px;
+    margin-left: 20px;
+    border-radius: 25px;
+    background: var(--text-color);
+    cursor: pointer;
+}
+
+.switch::before {
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background: var(--background);
+    transition: all .3s ease;
+}
+
+body.dark .switch::before {
+    left: 21px;
+}
+
+.side-bar ul .mode i {
+    position: absolute;
+    bottom: 14px;
+}
+
+.side-bar ul .mode i.sun {
+    opacity: 0;
+}
+
+body.dark .mode i.sun {
+    opacity: 1;
+}
+
+body.dark .mode i.moon {
+    opacity: 0;
+}
+
+.side-bar ul i {
+    margin-right: 10px;
+}
+
+.media-icon {
+    margin-top: 65px;
+    display: flex;
+    justify-content: center;
+}
+
+.media-icon a {
+    margin: 0px 7px;
+    font-size: 21px;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    text-decoration: none;
+    box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
+    position: relative;
+}
+
+.side-bar ul button:hover::before,
+.media-icon a:hover::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset -3px -3px 7px #ffffff,
+        inset 3px 3px 5px #ceced1;
+}
+
+.side-bar ul button:hover::before {
+    border-radius: 6px;
+}
+
+.side-bar ul button:hover {
+    color: #3498db;
+}
+
+.media-icon a:hover::before {
+    border-radius: 50%;
+}
+
+.media-icon a:nth-child(1) {
+    color: #4267b2;
+}
+
+.media-icon a:nth-child(2) {
+    color: #1da1f2;
+}
+
+.media-icon a:nth-child(3) {
+    color: #ff0672;
+}
+
+.media-icon a:nth-child(4) {
+    color: #00ff00;
+}
+
+label {
+    font-size: 15px;
+    color: var(--text-color);
+    box-shadow: -3px -3px 7px #ffffff,
+        3px 3px 5px #ceced1;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 37px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.bars {
+    position: fixed;
+    left: 15px;
+    top: 15px;
+    z-index: 100;
+    background: var(--background);
+}
+
+label:hover {
+    box-shadow: inset -3px -3px 7px #ffffff,
+        inset 3px 3px 5px #ceced1;
+    color: #3498db;
+}
+
+#check {
+    display: none;
+}
+
+#check:checked~.side-bar {
+    left: 0;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    justify-content: space-between;
+}
+
+#container .header {
+    flex: 100%;
+    color: var(--text-color);
+}
+
+#container .content {
+    width: 100%;
+}
+
+#container .content .header-text2 {
+    text-align: center;
+    background-color: #00ffff;
+    justify-content: space-around;
+    width: 150px;
+    margin: 20px 0;
+}
+
+#container .content .news {
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0px;
+    color: var(--text-color);
+}
+
+#container .content .video {
+    width: 280px;
+    margin: 10px 0;
+}
+
+#container .content .fixture{
+    margin: 40px auto;
+}
+
+
+#container .content .video div iframe {
+    margin: 10px 0;
+}
+
+#container .content table {
+    margin-top: 20px;
+    color: var(--text-color);
+}
+
+#container .content table.myLeague {
+    width: 280px;
+    margin-bottom: 30px;
+}
+
+#container .content table.myTeams {
+    width: 280px;
+    margin-bottom: 30px;
+}
+
+#container .content table.standings {
+    width: 280px;
+    margin-bottom: 30px;
+}
+
+#container .content td,th {
+    border: none;
+    padding: 0 8px;
+    font-size: 12px;
+    height: 50px;
+}
+
+#container .content tbody{
+    background-color: rgb(230, 230, 230);
+}
+
+#container .content tbody:nth-child(even) {
+    background-color: white;
+}
+
+#container .content tbody tr:hover {
+    transform: scale(1.02);
+    box-shadow: -3px -3px 7px var(--text-color), 3px 3px 5px var(--text-color);
+}
+
+body.dark #container .content tbody {
+    background: none;
+}
+
+#container .content table tr td.league-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6px;
+    font-weight: 700;
+}
+
+tr td {
+    text-align: center;
+}
+
+
+.logo-league {
+    width: 20px;
+    margin-right: 10px;
+}
+
+body.dark .logo-league{
+    background-color: white;
+    border-radius: 2px;
+}
+
+#container .content select {
+    margin-top: 20px;
+    width: 180px;
+    outline: none;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #ceced1;
+}
+
+#container .content .news img {
+    width: 100%;
+}
+
+#container .content input[type="submit"],
+#container .content input[type="reset"] {
+    padding: 5px;
+    margin: 15px 15px;
+    outline: none;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #1da1f2;
+    color: white;
+}
+
+#container .content .button-filter i {
+    margin: 10px 7px;
+    font-size: 15px;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
+    position: relative;
+    color: var(--text-color);
+}
+
+.popup .overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 20;
+    display: none;
+}
+
+.content button {
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.popup .contentt {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: #fff;
+    width: 250px;
+    height: 250px;
+    z-index: 21;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: all .3s ease-in-out;
+}
+
+
+.popup .close-button {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 25px;
+    height: 25px;
+    background: #222;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 26px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.popup.active .overlay {
+    display: flex;
+}
+
+.popup.active .contentt {
+    transition: all .3s ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 15px;
+    align-items: center;
+    text-align: center;
+    background-color: #00ffff;
+    font-size: 10px;
+    font-weight: 300;
+}
+
+@media screen and (min-width: 320px) {
+    .media-icon {
+        margin-top: 25px;
+    }
+    #container .content table.myTeams  {
+        width: 300px;
+    }
+}
+
+@media screen and (min-width: 360px) {
+    .side-bar {
+        width: 300px;
+        position: fixed;
+    }
+
+    .side-bar .title .logo {
+        font-size: 20px;
+    }
+
+    .side-bar .title .logo .image img {
+        width: 50px;
+    }
+
+    .side-bar .title .logo .header-text .ht2 {
+        font-size: 15px;
+    }
+
+    label {
+        font-size: 22px;
+        color: var(--text-color);
+        box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 45px;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    .side-bar ul .mode .mode-text {
+        width: 100%;
+        margin: 0 30px;
+    }
+
+    .toggle-switch .switch {
+        width: 44px;
+        margin: 0;
+    }
+
+    body.dark .switch::before {
+        left: 24px;
+    }
+
+    .media-icon {
+        margin-top: 70px;
+    }
+
+    .media-icon a {
+        margin: 0px 10px;
+        font-size: 25px;
+        height: 45px;
+        width: 45px;
+        line-height: 45px;
+    }
+
+    #container {
+        top: 15px;
+        left: 70px;
+    }
+
+    #container .content .video {
+        width: 285px;
+    }
+
+    #container .content table {
+        left: 0;
+    }
+
+    #container .content table tr td {
+        font-size: 13px;
+    }
+
+    #container .content table tr td.league-name {
+        font-size: 8px;
+    }
+
+    #container .content table.myTeams  {
+        width: 280px;
+    }
+
+    footer {
+        height: 30px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 375px) {
+    .media-icon {
+        margin-top: 40px;
+    }
+
+    #container .content .video {
+        width: 300px;
+    }
+
+    #container .content table.myTeams  {
+        width: 300px;
+    }
+}
+
+@media screen and (min-width: 390px) {
+    .media-icon {
+        margin-top: 60px;
+    }
+}
+
+@media screen and (min-width: 410px) {
+    .media-icon {
+        margin-top: 100px;
+    }
+
+    #container {
+        left: 90px;
+    }
+
+    #container .content table.myLeague {
+        width: 100%;
+    }
+    
+    #container .content table.myTeams {
+        width: 105%;
+    }
+
+    #container .content table.standings {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 500px){
+    .media-icon {
+        margin-top: 20px;
+    }
+
+    #container .content table.myTeams {
+        width: 108%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .media-icon {
+        margin-top: 180px;
+    }
+    #container {
+        left: 100px;
+    }
+
+    #container .content .header-text2 {
+        width: 200px;
+    }
+
+    #container .content .video {
+        width: 500px;
+    }
+
+    #container .content td,th {
+        padding: 0 15px;
+        font-size: 16px;
+    }
+
+    #container .content table tr td.league-name {
+        font-size: 12px;
+    }
+
+    #container .content table.myTeams  {
+        width: 550px;
+        font-weight: 600;
+    }
+
+    #container .content table.standings {
+        width: 500px;
+    }
+
+    footer {
+        font-size: 20px;
+        height: 40px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .media-icon {
+        margin-top: 30px;
+    }
+
+    #container {
+        left: 100px;
+    }
+
+    #container .content .video {
+        width: 700px;
+    }
+
+    #container .content .fixture {
+        margin: 20px auto;
+    }
+
+    #container .content table tr td {
+        padding: 0 40px;
+    }
+
+    #container .content table tr td.league-name {
+        font-size: 14px;
+        width: 420px;
+    }
+
+    #container .content table.myTeams  {
+        width: 700px;
+    }
+}
